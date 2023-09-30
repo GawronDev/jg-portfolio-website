@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    cursor: none;
+    user-select: none;
+}
+
+html,
+body {
+    --main-background: #121212;
+    --main-secondary-background: #C595FF;
+    --main-header: #ffffff;
+    --main-dark: #121212;
+    --main-light-purple: #C595FF;
+    --main-white: #ffffff;
+    --main-sub: #ffffff;
+    
+    --fs-big-header: 8em;
+    --fs-small-header: 5em;
+    
+    margin: 0;
+    width: 100vw;
+    font-family: 'Unbounded', sans-serif;
+    background-color: var(--main-background);
+}
+
+.main-wrapper {
+    width: 100%;
+}
+
+
+.content-wrapper {
+    background-color: var(--main-background);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.home-screen {
+    width: 100%;
+    height: 100vh;
+}
+
+.primary-wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.secondary-wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-secondary-background);
+    --mask: radial-gradient(circle at var(--x, 50.3%) var(--y, 50.3%),
+            black var(--maskSize1, 0%),
+            transparent 0,
+            transparent 0);
+    mask-image: var(--mask);
+    -webkit-mask-image: var(--mask);
+}
+
+.header-container {
+    position: absolute;
+}
+
+.header-container :nth-child(1) {
+    display: flex;
+    color: var(--main-light-purple);
+    margin: 0;
+    font-size: var(--fs-small-header);
+}
+
+.header-container :nth-child(2) {
+    display: flex;
+    margin: 20px 0;
+    font-size: var(--fs-big-header);
+    color: var(--main-header);
+}
+
+.header-container :nth-child(3) {
+    display: flex;
+    color: var(--main-light-purple);
+    margin: 0;
+    justify-content: end;
+    font-size: var(--fs-small-header);
+}
+
+.header-container-secondary :nth-child(1) {
+    display: flex;
+    color: var(--main-white);
+    margin: 0;
+    font-size: var(--fs-small-header);
+}
+
+.header-container-secondary :nth-child(2) {
+    display: flex;
+    margin: 20px 0;
+    font-size: var(--fs-big-header);
+    color: var(--main-dark);
+}
+
+.header-container-secondary :nth-child(3) {
+    display: flex;
+    color: var(--main-white);
+    margin: 0;
+    justify-content: end;
+    font-size: var(--fs-small-header);
+}
+
+.home-screen-mobile {
+    margin-top: 72px;
+    background-color: var(--main-background);
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobile-text {
+    color: white;
+    padding: 15px;
+}
+
+.mobile-text h3{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.mobile-text h1{
+    padding: 0;
+    margin: 5px 0;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.mobile-text p{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.mobile-text span {
+    color: var(--main-light-purple);
+}
+
+.mobile-image-container {
+    width: 100%;
+    align-content: center;
+}
+
+.mobile-image-container img {
+    width: 100%;
+}
+
+/* Extra Small (XS) - Mobile Phones */
+@media (max-width: 575px) {
+    html,
+    body {
+        --fs-big-header: 3em;
+        --fs-small-header: 1.7em;
+    }
+}
+
+/* Small (SM) - Tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+    html,
+    body {
+        --fs-big-header: 3em;
+        --fs-small-header: 1.7em;
+    }
+}
+
+/* Medium (MD) - Tablets and Small Laptops */
+@media (min-width: 768px) and (max-width: 991px) {
+    html,
+    body {
+        --fs-big-header: 3.5em;
+        --fs-small-header: 2.2em;
+    }
+}
+
+/* Large (LG) - Desktops and Larger Laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    html,
+    body {
+        --fs-big-header: 4em;
+        --fs-small-header: 2.9em;
+    }
+}
+
+/* Extra Large (XL) - Large Desktops and Beyond */
+@media (min-width: 1200px) and (max-width: 1599px){
+    html,
+    body {
+        --fs-big-header: 5.5em;
+        --fs-small-header: 3.8em;
+    }
+}
+
+/* Extra Large (XL) - Large Desktops and Beyond */
+@media (min-width: 1600px) and (max-width: 1919px){
+    html,
+    body {
+        --fs-big-header: 7em;
+        --fs-small-header: 4.5em;
+    }
+}
+
+/* Extra Large (XL) - Large Desktops and Beyond */
+@media (min-width: 1920px) {
+    html,
+    body {
+        --fs-big-header: 8em;
+        --fs-small-header: 5em;
+    }
+}
+
+/* Orientation Changes (Portrait and Landscape) */
+@media (orientation: portrait) {
+    .home-screen-mobile {
+        display: flex;
+    }
+
+    .home-screen {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) {
+    .home-screen {
+        display: flex;
+    }
+
+    .home-screen-mobile {
+        display: none;
+    }
+}
