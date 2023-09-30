@@ -10,3 +10,10 @@
     overflow: hidden;
     mix-blend-mode: luminosity;
   }
+
+  /*  Stop displaying the cursor if there is no mouse */
+@media (pointer: coarse) {
+    .cursor {
+      display: none;
+    }
+}

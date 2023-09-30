@@ -9,11 +9,14 @@ export default function HomeScreen() {
     // Initialize the bubble and the mouse listener
     useEffect(() => {
         const hero = document.querySelector(".secondary-wrapper");
-        tl.to(hero, {
-            "--maskSize1": "10%",
-            duration: 0.5,
-            ease: "back.out(2)",
-        });
+
+        if(window.matchMedia("(pointer: fine)").matches) {
+            tl.to(hero, {
+                "--maskSize1": "10%",
+                duration: 0.5,
+                ease: "back.out(2)",
+            });
+        }
 
         document.addEventListener("mousemove", debounce(function (event) {
             const screenWidth = window.innerWidth;
@@ -83,7 +86,7 @@ export default function HomeScreen() {
                     </p>
                 </div>
                 <div className='mobile-image-container'>
-                    <img src={MobileImage} alt="A photo of Jakub Gawroński"/>
+                    <img src={MobileImage} alt="A photo of Jakub Gawroński" />
                 </div>
             </div>
         </div>
