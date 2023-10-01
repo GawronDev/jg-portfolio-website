@@ -8,14 +8,14 @@
     aspect-ratio: 1 / 1;
 }
 
-#menu-item svg {
-    width: 100%;
-    height: auto;
+#menu-icon svg {
+  width: 100%;
+  height: auto;
 }
 
-#menu-item path {
-    width: 100%;
-    height: auto;
+#menu-icon path {
+  width: 100%;
+  height: auto;
 }
 
 .top-bar {
@@ -30,4 +30,30 @@
     align-items: center;
     flex-direction: row;
     box-sizing: border-box;
+}
+
+/* Extra Small (XS) - Mobile Phones */
+@media (max-width: 575px) {
+    .logo {
+        aspect-ratio: 1 / 1;
+        width: 42px;
+    }
+    
+    .menu-icon {
+        aspect-ratio: 1 / 1;
+        width: 42px;
+    }
+}
+
+/* Medium (MD) - Tablets and Small Laptops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo {
+        aspect-ratio: 1 / 1;
+        width: 42px;
+    }
+    
+    .menu-icon {
+        aspect-ratio: 1 / 1;
+        width: 42px;
+    }
 }

@@ -58,7 +58,9 @@ export default function TopBar(props) {
     return (
         <div className="top-bar">
             <img className="logo" src={Logo} alt="Jakub Gawroński Logo" />
-            <svg className="menu-icon" id="menu-icon" onClick={changeIcon}></svg>
+            <div className="menu-icon">
+                <svg id="menu-icon" onClick={changeIcon} width="100%" height="100%" viewBox="0 0 52 52"></svg>
+            </div>
         </div>
     );
 }
