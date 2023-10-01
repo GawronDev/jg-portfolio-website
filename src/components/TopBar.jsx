@@ -9,11 +9,11 @@ export default function TopBar(props) {
     let [menuButtonState, setMenuButtonState] = useState("menu");
     let snapRef = useRef(null);
 
-    useEffect(()=>{
-        if(!snapRef.current){
+    useEffect(() => {
+        if (!snapRef.current) {
             snapRef.current = Snap("#menu-icon");
             setMenuButtonState("menu");
-            Snap.load(MenuIcon, (fragment)=>{
+            Snap.load(MenuIcon, (fragment) => {
                 snapRef.current.clear();
                 snapRef.current.append(fragment);
             });
@@ -21,13 +21,13 @@ export default function TopBar(props) {
     }, []);
 
     function changeIcon() {
-        if(snapRef.current) {
-            if(menuButtonState == "menu"){
-                Snap.load(MenuX, (fragment)=>{
+        if (snapRef.current) {
+            if (menuButtonState == "menu") {
+                Snap.load(MenuX, (fragment) => {
                     var currentPath = snapRef.current.select("path");
                     var newPath = fragment.select("path");
-                    
-                    currentPath.animate({d: newPath.attr("d")}, 150, mina.easeout, () => {
+
+                    currentPath.animate({ d: newPath.attr("d") }, 150, mina.easeout, () => {
                         currentPath.remove();
                         snapRef.current.clear();
                         snapRef.current.append(fragment);
@@ -37,12 +37,12 @@ export default function TopBar(props) {
                 });
             }
 
-            if(menuButtonState == "x"){
-                Snap.load(MenuIcon, (fragment)=>{
+            if (menuButtonState == "x") {
+                Snap.load(MenuIcon, (fragment) => {
                     var currentPath = snapRef.current.select("path");
                     var newPath = fragment.select("path");
-                    
-                    currentPath.animate({d: newPath.attr("d")}, 150, mina.easeout, () => {
+
+                    currentPath.animate({ d: newPath.attr("d") }, 150, mina.easeout, () => {
                         currentPath.remove();
                         snapRef.current.clear();
                         snapRef.current.append(fragment);
@@ -52,7 +52,7 @@ export default function TopBar(props) {
                 });
             }
         }
-        
+
     }
 
     return (
