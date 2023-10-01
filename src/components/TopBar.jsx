@@ -1,40 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuIcon from "../assets/icons/MenuIcon.svg";
 import MenuX from "../assets/icons/MenuX.svg";
 import Logo from "../assets/logo_fi_nbg.png";
 import "../css/TopBar.css"
 import Snap from "snapsvg-cjs";
 
-export default function TopBar() {
+export default function TopBar(props) {
     let [menuButtonState, setMenuButtonState] = useState("menu");
-    var snap;
+    let snapRef = useRef(null);
 
     useEffect(()=>{
-        if(snap == null){
-            snap = Snap("#menu-icon");
+        if(!snapRef.current){
+            snapRef.current = Snap("#menu-icon");
             setMenuButtonState("menu");
             Snap.load(MenuIcon, (fragment)=>{
-                snap.clear();
-                snap.append(fragment);
+                snapRef.current.clear();
+                snapRef.current.append(fragment);
             });
         }
     }, []);
 
     function changeIcon() {
-        if(snap != undefined && menuButtonState == "menu"){
-            Snap.load(MenuX, (fragment)=>{
-                var currentPath = snap.select("path");
-                var newPath = fragment.select("path");
-                
-                currentPath.animate({d: newPath.attr("d")}, 150, mina.easeout, () => {
-                    currentPath.remove();
-                    snap.clear();
-                    snap.append(fragment);
-                    setMenuButtonState("closed");
+        if(snapRef.current) {
+            if(menuButtonState == "menu"){
+                Snap.load(MenuX, (fragment)=>{
+                    var currentPath = snapRef.current.select("path");
+                    var newPath = fragment.select("path");
+                    
+                    currentPath.animate({d: newPath.attr("d")}, 150, mina.easeout, () => {
+                        currentPath.remove();
+                        snapRef.current.clear();
+                        snapRef.current.append(fragment);
+                        props.openMenu();
+                        setMenuButtonState("x");
+                    });
                 });
+            }
 
-            });
+            if(menuButtonState == "x"){
+                Snap.load(MenuIcon, (fragment)=>{
+                    var currentPath = snapRef.current.select("path");
+                    var newPath = fragment.select("path");
+                    
+                    currentPath.animate({d: newPath.attr("d")}, 150, mina.easeout, () => {
+                        currentPath.remove();
+                        snapRef.current.clear();
+                        snapRef.current.append(fragment);
+                        props.closeMenu();
+                        setMenuButtonState("menu");
+                    });
+                });
+            }
         }
+        
     }
 
     return (
