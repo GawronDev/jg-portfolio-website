@@ -165,10 +165,7 @@ body {
     width: 100%;
 }
 
-/*  Stop displaying the cursor if there is no mouse */
-@media (pointer: coarse) {
-    
-}
+
 
 /* Extra Small (XS) - Mobile Phones */
 @media (max-width: 575px) {

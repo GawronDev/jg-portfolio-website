@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Cursor from './Cursor';
-import MobileImage from "../../public/assets/mobile-photo.png";
+import MobileImage from "../assets/mobile-photo.png";
 
 export default function HomeScreen() {
     const cursorRef = useRef();

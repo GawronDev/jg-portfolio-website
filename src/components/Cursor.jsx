@@ -6,8 +6,8 @@ export default function Cursor() {
 
     useEffect(()=>{
         document.addEventListener("mousemove", (event)=>{
-            const left = event.pageX;
-            const top = event.pageY;
+            const left = event.pageX - 20;
+            const top = event.pageY - 20;
             cursorRef.current.style.left = left + "px";
             cursorRef.current.style.top = top + "px";
         })
