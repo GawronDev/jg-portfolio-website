@@ -8,6 +8,11 @@
     aspect-ratio: 1 / 1;
 }
 
+.menu-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
 .top-bar {
     z-index: 99;
     padding: 10px;
