@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../css/menu.css";
+import "../css/Menu.css";
 
 export default function Menu(props){
     useEffect(()=>{
