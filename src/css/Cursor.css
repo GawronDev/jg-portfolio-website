@@ -1,7 +1,7 @@
 .cursor {
     z-index: 1;
     width: 40px;
-    height: 40px;
+    aspect-ratio: 1/1;
     position: fixed;
     border-radius: 50%;
     background-color: transparent;
@@ -9,6 +9,7 @@
     pointer-events: none;
     overflow: hidden;
     mix-blend-mode: luminosity;
+    transition: background-color 0.5s, width 0.5s ease-in-out;
   }
 
   /*  Stop displaying the cursor if there is no mouse */

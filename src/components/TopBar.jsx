@@ -52,13 +52,23 @@ export default function TopBar(props) {
                 });
             }
         }
+    }
 
+    function cursorTurnOnHover() {
+        let cursor = document.getElementById("cursor");
+        cursor.style.width = "30px";
+        cursor.style.backgroundColor = "#C595FF";
+    }
+
+    function cursorTurnOffHover() {
+        cursor.style.width = "40px";
+        cursor.style.backgroundColor = "transparent";
     }
 
     return (
         <div className="top-bar">
             <img className="logo" src={Logo} alt="Jakub Gawroński Logo" />
-            <div className="menu-icon">
+            <div className="menu-icon" onMouseEnter={cursorTurnOnHover} onMouseLeave={cursorTurnOffHover}>
                 <svg id="menu-icon" onClick={changeIcon} width="100%" height="100%" viewBox="0 0 52 52"></svg>
             </div>
         </div>
