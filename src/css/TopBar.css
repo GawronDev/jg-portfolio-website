@@ -30,7 +30,7 @@
     align-items: center;
     flex-direction: row;
     box-sizing: border-box;
-    background-color: #121212;
+    background-color: transparent;
 }
 
 /* Extra Small (XS) - Mobile Phones */
@@ -56,5 +56,12 @@
     .menu-icon {
         aspect-ratio: 1 / 1;
         width: 42px;
+    }
+}
+
+/* Orientation Changes (Portrait and Landscape) */
+@media (orientation: portrait) {
+    .top-bar {
+        background-color: #121212;
     }
 }
