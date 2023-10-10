@@ -215,7 +215,24 @@
         justify-content: inherit;
         gap: 15px;
     }
-
+    .menu-icon-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0px;
+        padding-bottom: 10px;
+        bottom: 0%;
+        opacity: 0%;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .menu-item-icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (orientation: landscape) {
