@@ -6,7 +6,10 @@ import Codepen from "../assets/icons/mdi_codepen.svg";
 import "../css/Menu.css";
 
 export default function Menu(props) {
+
     var menuItems = document.querySelectorAll(".menu-item");
+
+    // Change the menu item based on the current menu state
     useEffect(() => {
         if (props.status == "open") {
             document.getElementById("menu").style.overflowY = "hidden";
@@ -86,16 +89,24 @@ export default function Menu(props) {
             </div>
             <div className="menu-icon-container" id="icons">
                 <div className="menu-item-icon">
-                    <img src={Twitter} alt="Twitter icon"/>
+                    <a href="https://www.x.com/Codeolences">
+                        <img src={Twitter} alt="Twitter icon"/>
+                    </a>
                 </div>
                 <div className="menu-item-icon">
-                    <img src={Youtube} alt="Youtube icon"/>
+                    <a href="https://www.youtube.com/Codeolences">
+                        <img src={Youtube} alt="Youtube icon"/>
+                    </a>
                 </div>
                 <div className="menu-item-icon">
-                    <img src={Codepen} alt="Codepen icon"/>
+                    <a href="https://codepen.io/Codeolences">
+                        <img src={Codepen} alt="Codepen icon"/>
+                    </a>
                 </div>
                 <div className="menu-item-icon">
-                    <img src={Github} alt="Github icon"/>
+                    <a href="https://www.github.com/GawronDev">
+                        <img src={Github} alt="Github icon"/>
+                    </a>
                 </div>
             </div>
         </div>

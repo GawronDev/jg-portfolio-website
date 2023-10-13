@@ -7,12 +7,10 @@ export default function Root() {
   var [menuStatus, setMenuStatus] = useState("closed");
 
   function openMenu() {
-    console.log("Root: Opening menu");
     setMenuStatus("open");
   }
 
   function closeMenu() {
-    console.log("Root: Closing menu");
     setMenuStatus("closed");
   }
 
