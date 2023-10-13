@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Cursor from './Cursor';
 import MobileImage from "../assets/mobile-photo.png";
+import ArrowNav from './ArrowNav';
 
 export default function HomeScreen() {
     const cursorRef = useRef();
@@ -75,6 +76,7 @@ export default function HomeScreen() {
                         <h3>TO LIFE</h3>
                     </div>
                 </div>
+                <ArrowNav text="EXPLORE MORE" />
             </div>
             <div className='home-screen-mobile'>
                 <div className='mobile-text'>
