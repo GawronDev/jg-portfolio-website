@@ -58,6 +58,37 @@
     margin-right: 10px;
 }
 
+.menu-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 7px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
 .menu-item-icon {
     text-align: center;
     width: 100%;
@@ -75,7 +106,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 15px;
@@ -95,7 +126,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 15px;
@@ -115,7 +146,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 15px;
@@ -135,7 +166,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 16px;
@@ -146,7 +177,7 @@
 }
 
 /* Extra Large (XL) - Large Desktops and Beyond */
-@media (min-width: 1200px) and (max-width: 1599px){
+@media (min-width: 1200px) and (max-width: 1599px) {
     .menu-item h2 {
         display: block;
         color: white;
@@ -155,7 +186,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 16px;
@@ -166,7 +197,7 @@
 }
 
 /* Extra Large (XL) - Large Desktops and Beyond */
-@media (min-width: 1600px) and (max-width: 1919px){
+@media (min-width: 1600px) and (max-width: 1919px) {
     .menu-item h2 {
         display: block;
         color: white;
@@ -175,7 +206,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 17px;
@@ -195,7 +226,7 @@
         font-weight: 900;
         padding: 0;
     }
-    
+
     .menu-item span {
         color: #C595FF;
         font-size: 18px;
@@ -217,6 +248,7 @@
         justify-content: inherit;
         gap: 15px;
     }
+
     .menu-icon-container {
         display: flex;
         flex-direction: row;
@@ -228,6 +260,7 @@
         opacity: 0%;
         transition: opacity 0.5s ease-in-out;
     }
+
     .menu-item-icon {
         width: 100%;
         height: 100%;
@@ -237,6 +270,4 @@
     }
 }
 
-@media (orientation: landscape) {
-    
-}
+@media (orientation: landscape) {}

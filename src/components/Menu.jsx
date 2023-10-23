@@ -64,27 +64,27 @@ export default function Menu(props) {
             <div className="menu-content-wrapper">
                 <div className="menu-item">
                     <span>1. Landing page</span>
-                    <h2>START HERE</h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#">START HERE</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>2. Projects</span>
-                    <h2>MY WORK</h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#">MY WORK</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>3. My channel</span>
-                    <h2>YOUTUBE</h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#">YOUTUBE</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>4. About me</span>
-                    <h2>WHO AM I</h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#">WHO AM I</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>5. Useful articles</span>
-                    <h2>BLOG</h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#">BLOG</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>6. Contact me</span>
-                    <h2>GET IN TOUCH</h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#">GET IN TOUCH</a></h2>
                 </div>
             </div>
             <div className="menu-icon-container" id="icons">

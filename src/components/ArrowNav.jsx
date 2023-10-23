@@ -4,7 +4,7 @@ import "../css/ArrowNav.css";
 
 export default function ArrowNav(props) {
     return (
-        <div class="arrow-nav">
+        <div className="arrow-nav">
             <h3>
                 {props.text}
             </h3>
