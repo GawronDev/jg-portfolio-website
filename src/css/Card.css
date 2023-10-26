@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+    min-width: 300px;
+    min-height: 350px;
+    border-radius: 15px;
+    /* border: 2px solid #FFF; */
+    background-color: #2E2E2E;
+    padding: 15px;
+}
+
+.card-header {
+    margin: 0;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #C595FF;
+}
+
+.card-paragraph {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    text-align: justify;
+}

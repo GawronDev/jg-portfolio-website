@@ -5,13 +5,14 @@ import ArrowNav from './ArrowNav';
 
 export default function HomeScreen() {
     const cursorRef = useRef();
+    var isMouseOver = false;
     let tl = gsap.timeline({ delay: 0.5 });
 
     // Initialize the bubble and the mouse listener
     useEffect(() => {
         const hero = document.querySelector(".secondary-wrapper");
 
-        if(window.matchMedia("(pointer: fine)").matches) {
+        if (window.matchMedia("(pointer: fine)").matches) {
             tl.to(hero, {
                 "--maskSize1": "10%",
                 duration: 0.5,
@@ -19,7 +20,20 @@ export default function HomeScreen() {
             });
         }
 
+        var home = document.getElementById("home");
+
+        home.addEventListener("mouseleave", function (event) {
+            isMouseOver = false;
+            console.log("Mouse left");
+        }, false);
+
+        home.addEventListener("mouseover", function (event) {
+            isMouseOver = true;
+            console.log("Mouse in");
+        }, false);
+
         document.addEventListener("mousemove", debounce(function (event) {
+
             const screenWidth = window.innerWidth;
             const screenHeight = window.innerHeight;
             const cursorX = event.clientX;
@@ -60,7 +74,7 @@ export default function HomeScreen() {
 
     return (
         <div>
-            <div className='home-screen'>
+            <div className='home-screen' id="home">
                 <Cursor />
                 <div className='primary-wrapper'>
                     <div className='header-container'>

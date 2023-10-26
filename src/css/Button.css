@@ -1,0 +1,21 @@
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: none;
+    border-radius: 10px;
+    min-width: 110px;
+    width: fit-content;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: #C595FF;
+    padding: 12px 25px;
+    margin-top: auto;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}

@@ -11,13 +11,13 @@ body {
     --main-secondary-background: #C595FF;
     --main-header: #ffffff;
     --main-dark: #121212;
-    --main-light-purple: #C595FF; 
+    --main-light-purple: #C595FF;
     --main-white: #ffffff;
     --main-sub: #ffffff;
-    
+
     --fs-big-header: 8em;
     --fs-small-header: 5em;
-    
+
     margin: 0;
     width: 100vw;
     font-family: 'Unbounded', sans-serif;
@@ -131,21 +131,21 @@ body {
     padding: 15px;
 }
 
-.mobile-text h3{
+.mobile-text h3 {
     padding: 0;
     margin: 0;
     font-size: 16px;
     font-weight: 200;
 }
 
-.mobile-text h1{
+.mobile-text h1 {
     padding: 0;
     margin: 5px 0;
     font-size: 40px;
     font-weight: 800;
 }
 
-.mobile-text p{
+.mobile-text p {
     padding: 0;
     margin: 0;
     font-size: 16px;
@@ -166,9 +166,9 @@ body {
 }
 
 
-
 /* Extra Small (XS) - Mobile Phones */
 @media (max-width: 575px) {
+
     html,
     body {
         --fs-big-header: 3em;
@@ -178,6 +178,7 @@ body {
 
 /* Small (SM) - Tablets */
 @media (min-width: 576px) and (max-width: 767px) {
+
     html,
     body {
         --fs-big-header: 3em;
@@ -187,6 +188,7 @@ body {
 
 /* Medium (MD) - Tablets and Small Laptops */
 @media (min-width: 768px) and (max-width: 991px) {
+
     html,
     body {
         --fs-big-header: 3.5em;
@@ -196,6 +198,7 @@ body {
 
 /* Large (LG) - Desktops and Larger Laptops */
 @media (min-width: 992px) and (max-width: 1199px) {
+
     html,
     body {
         --fs-big-header: 4em;
@@ -204,7 +207,8 @@ body {
 }
 
 /* Extra Large (XL) - Large Desktops and Beyond */
-@media (min-width: 1200px) and (max-width: 1599px){
+@media (min-width: 1200px) and (max-width: 1599px) {
+
     html,
     body {
         --fs-big-header: 5.5em;
@@ -213,7 +217,8 @@ body {
 }
 
 /* Extra Large (XL) - Large Desktops and Beyond */
-@media (min-width: 1600px) and (max-width: 1919px){
+@media (min-width: 1600px) and (max-width: 1919px) {
+
     html,
     body {
         --fs-big-header: 7em;
@@ -223,6 +228,7 @@ body {
 
 /* Extra Large (XL) - Large Desktops and Beyond */
 @media (min-width: 1920px) {
+
     html,
     body {
         --fs-big-header: 8em;
