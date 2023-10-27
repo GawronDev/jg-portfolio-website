@@ -9,7 +9,7 @@ export default function Card(props) {
             <p className="card-paragraph">
                 {props.paragraphText}
             </p>
-            {props.button ? <Button text={props.buttonText} refrence={props.buttonRefrence}/> : undefined}
+            {props.button ? <Button text={props.buttonText} refrence={props.buttonRefrence}/> : <span></span>}
         </div>
     )
 }

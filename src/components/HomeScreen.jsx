@@ -20,37 +20,40 @@ export default function HomeScreen() {
             });
         }
 
-        var home = document.getElementById("home");
-
-        home.addEventListener("mouseleave", function (event) {
-            isMouseOver = false;
-            console.log("Mouse left");
-        }, false);
-
-        home.addEventListener("mouseover", function (event) {
-            isMouseOver = true;
-            console.log("Mouse in");
-        }, false);
+        var homeScreen = document.getElementById("home");
 
         document.addEventListener("mousemove", debounce(function (event) {
 
             const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
+            const screenHeight = homeScreen.offsetHeight;
             const cursorX = event.clientX;
             const cursorY = event.clientY;
 
+            const cursorCheck = event.pageY;
+
+            
             // Calculate the follower's position as a percentage of the distance
             // from the top right corner of the screen
             const offsetXPercentage = (cursorX / screenWidth) * 100;
             const offsetYPercentage = (cursorY / screenHeight) * 100;
-
+            
             // Calculate the follower's position relative to the cursor and screen center
             const offsetXCenter = (cursorX - screenWidth / 2) / 60; // Adjust the divisor to control the strength
             const offsetYCenter = (cursorY - screenHeight / 2) / 100; // Adjust the divisor to control the strength
-
+            
             // Combine both effects 
             const offsetX = (offsetXPercentage - offsetXCenter);
             const offsetY = (offsetYPercentage - offsetYCenter);
+            
+            if(screenHeight - cursorCheck <= 0){
+                gsap.to(hero, {
+                    "--x": `${((screenWidth * 0.5)/screenWidth) * 100}%`,
+                    "--y": `${((screenHeight * 0.5)/screenHeight) * 100}%`,
+                    duration: 2,
+                    ease: "sine.out",
+                });
+                return;
+            }
 
             gsap.to(hero, {
                 "--x": `${offsetX}%`,

@@ -3,6 +3,7 @@
 * {
     cursor: none;
     user-select: none;
+    overflow-x: hidden;
 }
 
 html,
@@ -68,6 +69,11 @@ body {
 }
 
 .header-container {
+    position: absolute;
+}
+
+.header-container-secondary {
+    margin-right: 17px;
     position: absolute;
 }
 
