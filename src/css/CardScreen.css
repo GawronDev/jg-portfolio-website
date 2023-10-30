@@ -2,8 +2,8 @@
     margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 50px;
+    justify-content: center;
+    padding: 0 15px;
+    gap: 20px;
 }
