@@ -1,0 +1,71 @@
+.project-screen {
+    margin-top: 60px;
+    padding: 0 15px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-screen-text {
+    z-index: 5;
+    width: 100%;
+    mix-blend-mode: screen;
+}
+
+.project-screen-text>h3 {
+    color: var(--main-light-purple);
+    font-size: var(--fs-index);
+    font-weight: 400;
+    margin: 0;
+}
+
+.project-screen-text>h1 {
+    color: white;
+    font-size: var(--fs-big-header);
+    font-weight: 900;
+    margin: 0;
+}
+
+.project-screen-text>p {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    width: 50%;
+    font-weight: 300;
+}
+
+#image-scroller {
+    align-items: center;
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    user-select: none;
+    transform: translate(0%, -50%);
+    position: absolute;
+    margin-top: 80vmin; 
+}
+
+.image-container {
+    overflow: visible;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    width: 60vmin;
+    height: fit-content;
+}
+
+.image-container span {
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.image {
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% center;
+    pointer-events: none;
+    transition: 0.2s ease-in;
+}

@@ -16,8 +16,9 @@ body {
     --main-white: #ffffff;
     --main-sub: #ffffff;
 
-    --fs-big-header: 8em;
+    --fs-big-header: 8.5em;
     --fs-small-header: 5em;
+    --fs-index: 52px;
 
     margin: 0;
     width: 100vw;
@@ -73,7 +74,6 @@ body {
 }
 
 .header-container-secondary {
-    margin-right: 17px;
     position: absolute;
 }
 

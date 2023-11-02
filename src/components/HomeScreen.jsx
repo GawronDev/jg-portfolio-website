@@ -77,8 +77,8 @@ export default function HomeScreen() {
 
     return (
         <div>
+            <Cursor />
             <div className='home-screen' id="home">
-                <Cursor />
                 <div className='primary-wrapper'>
                     <div className='header-container'>
                         <h3>BRING YOUR</h3>
