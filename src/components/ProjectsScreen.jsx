@@ -38,14 +38,8 @@ export default function ProjectScreen() {
             track.dataset.percentage = nextPercentage;
 
             track.animate({
-                transform: `translate(${nextPercentage}%, -50%)`
+                transform: `translate(${nextPercentage}%, 0%)`
             }, { duration: 1200, fill: "forwards" });
-
-            for (const image of track.getElementsByClassName("image")) {
-                image.animate({
-                    objectPosition: `${100 + nextPercentage}% center`
-                }, { duration: 1200, fill: "forwards" });
-            }
         }
 
         /* -- Had to add extra lines for touch events -- */

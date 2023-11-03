@@ -4,8 +4,6 @@ import MobileImage from "../assets/mobile-photo.png";
 import ArrowNav from './ArrowNav';
 
 export default function HomeScreen() {
-    const cursorRef = useRef();
-    var isMouseOver = false;
     let tl = gsap.timeline({ delay: 0.5 });
 
     // Initialize the bubble and the mouse listener
@@ -86,7 +84,7 @@ export default function HomeScreen() {
                         <h3>TO LIFE</h3>
                     </div>
                 </div>
-                <div className='secondary-wrapper' ref={cursorRef}>
+                <div className='secondary-wrapper' >
                     <div className='header-container header-container-secondary' >
                         <h3>BRING YOUR</h3>
                         <h1>DREAM WEB VISION</h1>

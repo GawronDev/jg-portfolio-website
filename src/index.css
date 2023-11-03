@@ -60,6 +60,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
     background-color: var(--main-secondary-background);
     --mask: radial-gradient(circle at var(--x, 50.3%) var(--y, 50.3%),
             black var(--maskSize1, 0%),
