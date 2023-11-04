@@ -4,6 +4,12 @@ import Lgpd2 from "../assets/project-images/lgpd2.jpeg";
 import Mgd1 from "../assets/project-images/mgd1.jpeg";
 import Mgd2 from "../assets/project-images/mgd2.jpeg";
 import Mdg1 from "../assets/project-images/mdg1.jpg";
+import Scz1 from "../assets/project-images/szc1.jpeg";
+import Scz2 from "../assets/project-images/szc2.jpeg";
+import Lcky1 from "../assets/project-images/lcky1.jpeg";
+import Lcky2 from "../assets/project-images/lcky2.jpeg";
+
+
 
 import "../css/ProjectScreen.css";
 
@@ -13,7 +19,7 @@ export default function ProjectScreen() {
         const track = document.getElementById("image-scroller");
 
         for (const image of track.getElementsByClassName("image-container")) {
-            var random = Math.ceil(Math.random() * 130) * (Math.round(Math.random()) ? 1 : -1)
+            var random = Math.ceil(Math.random() * 130) * (Math.round(Math.random()) ? 1 : -1);
             console.log(random);
             image.style.transform = "translate(0, " + random + "px)";
         }
@@ -73,7 +79,7 @@ export default function ProjectScreen() {
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Lgpd1} />
+                    <img className="image" src={Lgpd2} />
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
@@ -81,11 +87,27 @@ export default function ProjectScreen() {
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
+                    <img className="image" src={Scz2} />
+                    <span>01 // www.something.com</span>
+                </div>
+                <div className="image-container">
+                    <img className="image" src={Lcky2} />
+                    <span>01 // www.something.com</span>
+                </div>
+                <div className="image-container">
                     <img className="image" src={Mgd2} />
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Lgpd2} />
+                    <img className="image" src={Lgpd1} />
+                    <span>01 // www.something.com</span>
+                </div>
+                <div className="image-container">
+                    <img className="image" src={Lcky1} />
+                    <span>01 // www.something.com</span>
+                </div>
+                <div className="image-container">
+                    <img className="image" src={Scz1} />
                     <span>01 // www.something.com</span>
                 </div>
             </div>

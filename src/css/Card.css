@@ -4,6 +4,7 @@
     min-width: 300px;
     width: 30%;
     min-height: 350px;
+    max-width: 600px;
     border-radius: 15px;
     /* border: 2px solid #FFF; */
     background-color: #1E1E1E;
