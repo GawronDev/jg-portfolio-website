@@ -18,7 +18,7 @@ export default function HomeScreen() {
             });
         }
 
-        var homeScreen = document.getElementById("home");
+        let homeScreen = document.getElementById("home");
 
         document.addEventListener("mousemove", debounce(function (event) {
 
@@ -64,7 +64,7 @@ export default function HomeScreen() {
 
     // Debounce function for smooth following of the bubble
     function debounce(callback, wait) {
-        var timeout;
+        let timeout;
         return function (e) {
             clearTimeout(timeout);
             timeout = setTimeout(() => {

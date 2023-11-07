@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
+import React, {useEffect} from "react";
 import Lgpd1 from "../assets/project-images/lgpd1.jpeg";
 import Lgpd2 from "../assets/project-images/lgpd2.jpeg";
 import Mgd1 from "../assets/project-images/mgd1.jpeg";
@@ -10,16 +11,54 @@ import Lcky1 from "../assets/project-images/lcky1.jpeg";
 import Lcky2 from "../assets/project-images/lcky2.jpeg";
 
 
-
 import "../css/ProjectScreen.css";
 
 export default function ProjectScreen() {
 
+
     useEffect(() => {
+        let landscape = window.matchMedia("(orientation: landscape)");
+
+        landscape.addEventListener("change", function (e) {
+            if (e.matches) {
+                imageScroller();
+                console.log("Image scroller working");
+            } else {
+                disableImageScroller();
+            }
+        });
+
+        if(landscape.matches){
+            imageScroller();
+            console.log("Image scroller working");
+        }
+    }, [])
+    function disableImageScroller() {
         const track = document.getElementById("image-scroller");
 
         for (const image of track.getElementsByClassName("image-container")) {
-            var random = Math.ceil(Math.random() * 130) * (Math.round(Math.random()) ? 1 : -1);
+            image.style.transform = "none";
+        }
+
+        window.onmousedown = e => e;
+
+        window.ontouchstart = e => e;
+
+        window.onmouseup = e => e;
+
+        window.ontouchend = e => e;
+
+        window.onmousemove = e => e;
+
+        window.ontouchmove = e => e;
+
+    }
+
+    function imageScroller() {
+        const track = document.getElementById("image-scroller");
+
+        for (const image of track.getElementsByClassName("image-container")) {
+            let random = Math.ceil(Math.random() * 100);
             console.log(random);
             image.style.transform = "translate(0, " + random + "px)";
         }
@@ -45,7 +84,7 @@ export default function ProjectScreen() {
 
             track.animate({
                 transform: `translate(${nextPercentage}%, 0%)`
-            }, { duration: 1200, fill: "forwards" });
+            }, {duration: 1200, fill: "forwards"});
         }
 
         /* -- Had to add extra lines for touch events -- */
@@ -61,7 +100,7 @@ export default function ProjectScreen() {
         window.onmousemove = e => handleOnMove(e);
 
         window.ontouchmove = e => handleOnMove(e.touches[0]);
-    }, [])
+    }
 
     return (
         <div className="project-screen">
@@ -71,43 +110,48 @@ export default function ProjectScreen() {
                 <p>Each project has been carefully crafted to meet the unique needs of my clients,
                     and has been designed with user experience in mind.
                     I take pride in my ability to deliver high-quality,
-                    visually appealing websites that are optimized for search engines and easy for users to navigate. </p>
+                    visually appealing websites that are optimized for search engines and easy for users to
+                    navigate. </p>
             </div>
             <div id="image-scroller" data-mouse-down-at="0" data-prev-percentage="0">
                 <div className="image-container">
-                    <img className="image" src={Mgd1} />
+                    <img className="image" src={Mgd1} alt="A mockup of the home page of www.implantsclinic.pl"/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Lgpd2} />
+                    <img className="image" src={Lgpd2} alt="A mockup of the pages from www.logopedadrezdenko.pl"/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Mdg1} />
+                    <img className="image" src={Mdg1}
+                         alt="A mockup of the pages from the Lottery Project I made on university"/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Scz2} />
+                    <img className="image" src={Scz2}
+                         alt="A mockup of the gallery page from a website I made for my client."/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Lcky2} />
+                    <img className="image" src={Lcky2}
+                         alt="A mockup of the home page of branding agency Lucky18 Studio"/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Mgd2} />
+                    <img className="image" src={Mgd2}
+                         alt="A mockup of the pages from the website www.implantsclinic.pl"/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Lgpd1} />
+                    <img className="image" src={Lgpd1} alt="A mockup of the homepage form the page logopedadrezdenko"/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Lcky1} />
+                    <img className="image" src={Lcky1}/>
                     <span>01 // www.something.com</span>
                 </div>
                 <div className="image-container">
-                    <img className="image" src={Scz1} />
+                    <img className="image" src={Scz1}/>
                     <span>01 // www.something.com</span>
                 </div>
             </div>

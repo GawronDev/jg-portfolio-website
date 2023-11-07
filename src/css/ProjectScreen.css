@@ -11,6 +11,7 @@
     z-index: 1;
     width: 100%;
     mix-blend-mode: exclusion;
+    box-sizing: border-box;
 }
 
 .project-screen-text>h3 {
@@ -64,4 +65,51 @@
     object-fit: cover;
     pointer-events: none;
     transition: 0.2s ease-in;
+}
+
+/* Orientation Changes (Portrait and Landscape) */
+@media (orientation: portrait) {
+    .project-screen {
+        margin-top: 150px;
+        padding: 0 0;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    #image-scroller {
+        padding: 0 15px;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        user-select: none;
+    }
+    .project-screen-text > p{
+        width: 100%;
+    }
+
+    .project-screen-text {
+        padding: 0 15px;
+    }
+
+    .image-container {
+        overflow: visible;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    #image-scroller {
+        overflow: visible;
+        width: 200vw;
+        display: flex;
+        flex-direction: row;
+        gap: 0.7rem;
+        user-select: none;
+    }
 }
