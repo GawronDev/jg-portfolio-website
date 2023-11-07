@@ -116,43 +116,43 @@ export default function ProjectScreen() {
             <div id="image-scroller" data-mouse-down-at="0" data-prev-percentage="0">
                 <div className="image-container">
                     <img className="image" src={Mgd1} alt="A mockup of the home page of www.implantsclinic.pl"/>
-                    <span>01 // www.something.com</span>
+                    <span>01 <span className="text-separator">//</span> www.implantsclinic.pl</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Lgpd2} alt="A mockup of the pages from www.logopedadrezdenko.pl"/>
-                    <span>01 // www.something.com</span>
+                    <span>02 <span className="text-separator">//</span> www.logopedadrezdenko.pl</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Mdg1}
                          alt="A mockup of the pages from the Lottery Project I made on university"/>
-                    <span>01 // www.something.com</span>
+                    <span>03 <span className="text-separator">//</span> TU Dresden internship project</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Scz2}
                          alt="A mockup of the gallery page from a website I made for my client."/>
-                    <span>01 // www.something.com</span>
+                    <span>04 <span className="text-separator">//</span> Mateusz Szczepkowski personal portfolio</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Lcky2}
                          alt="A mockup of the home page of branding agency Lucky18 Studio"/>
-                    <span>01 // www.something.com</span>
+                    <span>05 <span className="text-separator">//</span> www.lucky18.com.pl</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Mgd2}
                          alt="A mockup of the pages from the website www.implantsclinic.pl"/>
-                    <span>01 // www.something.com</span>
+                    <span>06 <span className="text-separator">//</span> www.implantsclinic.pl</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Lgpd1} alt="A mockup of the homepage form the page logopedadrezdenko"/>
-                    <span>01 // www.something.com</span>
+                    <span>07 <span className="text-separator">//</span> www.logopedadrezdenko.pl</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Lcky1}/>
-                    <span>01 // www.something.com</span>
+                    <span>08 <span className="text-separator">//</span> www.lucky18.com.pl</span>
                 </div>
                 <div className="image-container">
                     <img className="image" src={Scz1}/>
-                    <span>01 // www.something.com</span>
+                    <span>01 <span className="text-separator">//</span> Mateusz Szczepkowski personal portfolio</span>
                 </div>
             </div>
         </div>

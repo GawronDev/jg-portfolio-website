@@ -7,6 +7,10 @@
     flex-direction: column;
 }
 
+.text-separator {
+    color: var(--main-light-purple)!important;
+}
+
 .project-screen-text {
     z-index: 1;
     width: 100%;
@@ -39,7 +43,7 @@
 
 #image-scroller {
     overflow: visible;
-    width: 200vw;
+    width: 300vw;
     display: flex;
     flex-direction: row;
     gap: 0.7rem;
@@ -106,7 +110,7 @@
 @media (orientation: landscape) {
     #image-scroller {
         overflow: visible;
-        width: 200vw;
+        width: 300vw;
         display: flex;
         flex-direction: row;
         gap: 0.7rem;
