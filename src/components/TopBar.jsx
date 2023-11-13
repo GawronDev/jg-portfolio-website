@@ -6,13 +6,11 @@ import "../css/TopBar.css"
 import Snap from "snapsvg-cjs";
 
 export default function TopBar(props) {
-    let [menuButtonState, setMenuButtonState] = useState("menu");
     let snapRef = useRef(null);
 
     useEffect(() => {
         if (!snapRef.current) {
             snapRef.current = Snap("#menu-icon");
-            setMenuButtonState("menu");
             Snap.load(MenuIcon, (fragment) => {
                 snapRef.current.clear();
                 snapRef.current.append(fragment);
@@ -20,9 +18,17 @@ export default function TopBar(props) {
         }
     }, []);
 
+    useEffect(() => {
+        changeIcon();
+    }, [props.status]);
+
+    function clickMenuButton() {
+        props.changeMenuState();
+    }
+
     function changeIcon() {
         if (snapRef.current) {
-            if (menuButtonState == "menu") {
+            if (props.status == "open") {
                 Snap.load(MenuX, (fragment) => {
                     var currentPath = snapRef.current.select("path");
                     var newPath = fragment.select("path");
@@ -31,13 +37,11 @@ export default function TopBar(props) {
                         currentPath.remove();
                         snapRef.current.clear();
                         snapRef.current.append(fragment);
-                        props.openMenu();
-                        setMenuButtonState("x");
                     });
                 });
             }
 
-            if (menuButtonState == "x") {
+            if (props.status == "closed") {
                 Snap.load(MenuIcon, (fragment) => {
                     var currentPath = snapRef.current.select("path");
                     var newPath = fragment.select("path");
@@ -46,8 +50,6 @@ export default function TopBar(props) {
                         currentPath.remove();
                         snapRef.current.clear();
                         snapRef.current.append(fragment);
-                        props.closeMenu();
-                        setMenuButtonState("menu");
                     });
                 });
             }
@@ -69,7 +71,7 @@ export default function TopBar(props) {
         <div className="top-bar">
             <img className="logo" src={Logo} alt="Jakub Gawroński Logo" />
             <div className="menu-icon" onMouseEnter={cursorTurnOnHover} onMouseLeave={cursorTurnOffHover}>
-                <svg id="menu-icon" onClick={changeIcon} width="100%" height="100%" viewBox="0 0 52 52"></svg>
+                <svg id="menu-icon" onClick={clickMenuButton} width="100%" height="100%" viewBox="0 0 52 52"></svg>
             </div>
         </div>
     );

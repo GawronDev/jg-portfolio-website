@@ -22,7 +22,6 @@ export default function ProjectScreen() {
         landscape.addEventListener("change", function (e) {
             if (e.matches) {
                 imageScroller();
-                console.log("Image scroller working");
             } else {
                 disableImageScroller();
             }
@@ -30,7 +29,6 @@ export default function ProjectScreen() {
 
         if(landscape.matches){
             imageScroller();
-            console.log("Image scroller working");
         }
     }, [])
     function disableImageScroller() {
@@ -59,7 +57,6 @@ export default function ProjectScreen() {
 
         for (const image of track.getElementsByClassName("image-container")) {
             let random = Math.ceil(Math.random() * 100);
-            console.log(random);
             image.style.transform = "translate(0, " + random + "px)";
         }
 
@@ -103,7 +100,7 @@ export default function ProjectScreen() {
     }
 
     return (
-        <div className="project-screen">
+        <div className="project-screen" id="projects">
             <div className="project-screen-text">
                 <h3>EXPLORE</h3>
                 <h1>MY WORK</h1>

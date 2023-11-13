@@ -8,19 +8,29 @@ import ProjectScreen from '../components/ProjectsScreen';
 export default function Root() {
   var [menuStatus, setMenuStatus] = useState("closed");
 
+  function changeMenuState() {
+    if (menuStatus == "closed") {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  }
+
   function openMenu() {
+    console.log("open menu");
     setMenuStatus("open");
   }
 
   function closeMenu() {
+    console.log("close menu");
     setMenuStatus("closed");
   }
 
   return (
     <div className='main-wrapper'>
-      <TopBar openMenu={openMenu} closeMenu={closeMenu} />
+      <TopBar status={menuStatus} changeMenuState={changeMenuState}/>
       <div className='content-wrapper'>
-        <Menu status={menuStatus} />
+        <Menu status={menuStatus} changeMenuState={changeMenuState}/>
         <HomeScreen />
         <CardScreen />
         <ProjectScreen />

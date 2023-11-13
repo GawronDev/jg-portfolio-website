@@ -20,7 +20,7 @@ export default function Menu(props) {
             setTimeout(() => {
                 document.getElementById("icons").style.opacity = "100%";
             }, 500);
-            setTimeout(()=>{
+            setTimeout(() => {
                 document.getElementById("menu").style.overflowY = "auto";
             }, 500);
         } else if (props.status == "closed") {
@@ -32,7 +32,7 @@ export default function Menu(props) {
             setTimeout(() => {
                 document.getElementById("menu").style.height = "0%";
             }, 500);
-            setTimeout(()=>{
+            setTimeout(() => {
                 document.getElementById("menu").style.overflowY = "auto";
             }, 1000);
         }
@@ -59,16 +59,23 @@ export default function Menu(props) {
         }
     }
 
+    function scrollToElement(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'instant'});
+        }
+    }
+
     return (
         <div className="menu" id="menu">
             <div className="menu-content-wrapper">
                 <div className="menu-item">
                     <span>1. Landing page</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#">START HERE</a></h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#" onClick={(event) => { props.changeMenuState(); scrollToElement("home") }}>START HERE</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>2. Projects</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#">MY WORK</a></h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#projects" onClick={(event) => { props.changeMenuState(); scrollToElement("projects") }}>MY WORK</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>3. My channel</span>
@@ -90,22 +97,22 @@ export default function Menu(props) {
             <div className="menu-icon-container" id="icons">
                 <div className="menu-item-icon">
                     <a href="https://www.x.com/Codeolences">
-                        <img src={Twitter} alt="Twitter icon"/>
+                        <img src={Twitter} alt="Twitter icon" />
                     </a>
                 </div>
                 <div className="menu-item-icon">
                     <a href="https://www.youtube.com/Codeolences">
-                        <img src={Youtube} alt="Youtube icon"/>
+                        <img src={Youtube} alt="Youtube icon" />
                     </a>
                 </div>
                 <div className="menu-item-icon">
                     <a href="https://codepen.io/Codeolences">
-                        <img src={Codepen} alt="Codepen icon"/>
+                        <img src={Codepen} alt="Codepen icon" />
                     </a>
                 </div>
                 <div className="menu-item-icon">
                     <a href="https://www.github.com/GawronDev">
-                        <img src={Github} alt="Github icon"/>
+                        <img src={Github} alt="Github icon" />
                     </a>
                 </div>
             </div>
