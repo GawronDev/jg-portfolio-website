@@ -9,6 +9,7 @@ import Scz1 from "../assets/project-images/szc1.jpeg";
 import Scz2 from "../assets/project-images/szc2.jpeg";
 import Lcky1 from "../assets/project-images/lcky1.jpeg";
 import Lcky2 from "../assets/project-images/lcky2.jpeg";
+import ArrowNav from "./ArrowNav";
 
 
 import "../css/ProjectScreen.css";

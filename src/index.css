@@ -4,6 +4,7 @@
     cursor: none;
     user-select: none;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 html,

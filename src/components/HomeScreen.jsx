@@ -91,7 +91,6 @@ export default function HomeScreen() {
                         <h3>TO LIFE</h3>
                     </div>
                 </div>
-                <ArrowNav text="EXPLORE MORE" />
             </div>
             <div className='home-screen-mobile'>
                 <div className='mobile-text'>

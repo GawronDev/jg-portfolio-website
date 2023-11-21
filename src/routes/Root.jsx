@@ -4,6 +4,7 @@ import TopBar from '../components/TopBar';
 import Menu from '../components/Menu';
 import CardScreen from "../components/CardScreen";
 import ProjectScreen from '../components/ProjectsScreen';
+import AboutMeScreen from '../components/AboutMeScreen';
 
 export default function Root() {
   var [menuStatus, setMenuStatus] = useState("closed");
@@ -34,6 +35,7 @@ export default function Root() {
         <HomeScreen />
         <CardScreen />
         <ProjectScreen />
+        <AboutMeScreen />
       </div>
     </div>
   )

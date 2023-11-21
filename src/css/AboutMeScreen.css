@@ -1,0 +1,98 @@
+.about-me {
+    padding: 0 40px;
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-me-screen-text {
+    width: 60%;
+    padding: 0 20px;
+}
+
+.about-me-screen-text>h3 {
+    color: var(--main-light-purple);
+    font-size: var(--fs-index);
+    font-weight: 400;
+    margin: 0;
+}
+
+.about-me-screen-text>h2 {
+    color: white;
+    font-size: var(--fs-small-header);
+    font-weight: 900;
+    margin: 0;
+}
+
+.about-me-screen-text>h1 {
+    color: white;
+    font-size: var(--fs-big-header);
+    font-weight: 900;
+    margin: 0;
+}
+
+.about-me-screen-text>p {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    width: 100%;
+    font-weight: 300;
+}
+
+.image-wrapper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-wrapper > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-wrapper > span {
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.margin {
+    margin-top: 200px;
+}
+
+.text-limiter {
+    max-width: 700px;
+}
+
+/* Orientation Changes (Portrait and Landscape) */
+@media (orientation: portrait) {
+    .image-wrapper {
+        width: 100%;
+    }
+    .about-me-screen-text {
+        width: 100%;
+        padding: 15px 0px;
+    }
+
+    .about-me {
+        margin-top: 100px;
+        padding: 0 15px;
+    }
+
+    .margin {
+        margin-top: 20px;
+    }
+}  
+
+@media (orientation: landscape) {
+    
+}

@@ -79,7 +79,7 @@ export default function Menu(props) {
                 </div>
                 <div className="menu-item">
                     <span>3. My channel</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#">YOUTUBE</a></h2>
+                    <h2><a className="menu-link hover-underline-animation" href="https://www.youtube.com/@Codeolences">YOUTUBE</a></h2>
                 </div>
                 <div className="menu-item">
                     <span>4. About me</span>
@@ -101,7 +101,7 @@ export default function Menu(props) {
                     </a>
                 </div>
                 <div className="menu-item-icon">
-                    <a href="https://www.youtube.com/Codeolences">
+                    <a href="https://www.youtube.com/@Codeolences">
                         <img src={Youtube} alt="Youtube icon" />
                     </a>
                 </div>
