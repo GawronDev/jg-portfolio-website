@@ -9,7 +9,7 @@
     pointer-events: none;
     overflow: hidden;
     mix-blend-mode: luminosity;
-    transition: background-color 0.5s, width 0.5s ease-in-out;
+    transition: background-color 0.3s, width 0.5s ease-in-out;
   }
 
   /*  Stop displaying the cursor if there is no mouse */

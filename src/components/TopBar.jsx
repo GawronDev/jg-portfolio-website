@@ -59,12 +59,16 @@ export default function TopBar(props) {
     function cursorTurnOnHover() {
         let cursor = document.getElementById("cursor");
         cursor.style.width = "30px";
+        cursor.style.mixBlendMode = "normal";
         cursor.style.backgroundColor = "#C595FF";
+        cursor.style.opacity = "0.5";
     }
 
     function cursorTurnOffHover() {
         cursor.style.width = "40px";
+        cursor.style.mixBlendMode = "luminosity";
         cursor.style.backgroundColor = "transparent";
+        cursor.style.opacity = "1";
     }
 
     return (

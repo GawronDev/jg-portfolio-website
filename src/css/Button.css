@@ -2,15 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border: none;
     border-radius: 10px;
     min-width: 110px;
     width: fit-content;
     justify-content: center;
     flex-shrink: 0;
-    background-color: #C595FF;
-    padding: 12px 25px;
+    background-color: #1E1E1E;
+    padding: 10px 20px;
     margin-top: auto;
+    border: 3px solid #C595FF;
 }
 
 .button a {
