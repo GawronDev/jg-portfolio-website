@@ -33,7 +33,7 @@ export default function Root() {
       <div className='content-wrapper'>
         <Menu status={menuStatus} changeMenuState={changeMenuState}/>
         <HomeScreen />
-        <CardScreen />
+        {/* <CardScreen /> */}
         <ProjectScreen />
         <AboutMeScreen />
       </div>
