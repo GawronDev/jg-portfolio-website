@@ -5,13 +5,13 @@
     z-index: 2;
     left: 0;
     top: 0;
-    background-color: #121212;
+    background-color: var(--main-secondary-background);
     overflow-x: hidden;
     transition: 0.4s ease-in;
 }
 
 .menu-content-wrapper {
-    margin: 0 10px;
+    margin: 0 0px;
     width: 100%;
     margin-top: 76px;
     min-height: calc(100vh - 76px);
@@ -21,6 +21,10 @@
 }
 
 .menu-item {
+    display: flex;
+    padding-left: 15px;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     max-height: 16%;
     opacity: 0;
@@ -29,19 +33,12 @@
 
 .menu-item h2 {
     display: block;
-    color: white;
+    color: var(--main-dark);
     font-size: 120px;
     margin: 0;
     font-weight: 900;
     padding: 0;
-}
-
-.menu-item span {
-    color: #C595FF;
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-    font-weight: 300;
+    line-height: 1.6;
 }
 
 .menu-icon-container {
@@ -50,18 +47,38 @@
     width: 40px;
     gap: 15px;
     position: fixed;
+    color: black;
     bottom: 2%;
     right: 0%;
-    opacity: 0%;
-    transition: opacity 0.5s ease-in-out;
-    margin-right: 10px;
+    opacity: 100%;
+    margin-right: 15px;
+    z-index: 99;
+}
+
+.menu-item-icon {
+    filter: brightness(0%) saturate(100%);
+    transition: 0.2s ease-in-out;
+}
+
+.menu-item-icon:hover {
+    transform: scale(1.1);
+    filter: invert(61%) sepia(40%) saturate(3776%) hue-rotate(357deg) brightness(99%) contrast(111%);
+
 }
 
 .menu-link {
-    color: white;
+    color: var(--main-dark);
     text-decoration: none;
+    transition: 0.5s ease-out;
+    z-index: 99;    
 }
 
+
+.orange {
+    opacity: 45%;
+    filter: blur(2px);
+    color: var(--main-light-orange);
+}
 
 .hover-underline-animation {
     display: inline-block;
@@ -73,20 +90,23 @@
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 3px;
+    height: 5px;
     bottom: 7px;
+    z-index: 98;
     left: 0;
-    background-color: #ffffff;
+    background-color: var(--main-light-orange);
+    filter: blur(3px);
     transform-origin: bottom right;
-    transition: transform 0.5s ease-out;
+    transition: transform 0.8s ease-in-out;
+    opacity: 45%;
+
 }
 
 .hover-underline-animation:hover::after {
+    z-index: 98;
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
-
 
 .menu-item-icon {
     text-align: center;
@@ -99,19 +119,10 @@
 @media (max-width: 575px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 30px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 15px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -119,19 +130,10 @@
 @media (min-width: 576px) and (max-width: 767px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 65px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 15px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -139,19 +141,10 @@
 @media (min-width: 768px) and (max-width: 991px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 70px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 15px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -159,19 +152,10 @@
 @media (min-width: 992px) and (max-width: 1199px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 75px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -179,19 +163,10 @@
 @media (min-width: 1200px) and (max-width: 1599px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 80px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -199,19 +174,10 @@
 @media (min-width: 1600px) and (max-width: 1919px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 100px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 17px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -219,19 +185,10 @@
 @media (min-width: 1920px) {
     .menu-item h2 {
         display: block;
-        color: white;
         font-size: 120px;
         margin: 0;
         font-weight: 900;
         padding: 0;
-    }
-
-    .menu-item span {
-        color: #C595FF;
-        font-size: 18px;
-        margin: 0;
-        padding: 0;
-        font-weight: 300;
     }
 }
 
@@ -256,8 +213,8 @@
         padding: 0px;
         padding-bottom: 10px;
         bottom: 0%;
-        opacity: 0%;
-        transition: opacity 0.5s ease-in-out;
+        opacity: 100%;
+        filter: invert(100%);
     }
 
     .menu-item-icon {

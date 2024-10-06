@@ -60,7 +60,7 @@ export default function TopBar(props) {
         let cursor = document.getElementById("cursor");
         cursor.style.width = "30px";
         cursor.style.mixBlendMode = "normal";
-        cursor.style.backgroundColor = "#C595FF";
+        cursor.style.backgroundColor = "#ff8800";
         cursor.style.opacity = "0.5";
     }
 

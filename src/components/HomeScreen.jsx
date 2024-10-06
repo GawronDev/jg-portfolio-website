@@ -8,11 +8,13 @@ export default function HomeScreen() {
 
     // Initialize the bubble and the mouse listener
     useEffect(() => {
-        const hero = document.querySelector(".secondary-wrapper");
+        const hero = document.querySelector(".circle");
 
         if (window.matchMedia("(pointer: fine)").matches) {
             tl.to(hero, {
-                "--maskSize1": "10%",
+                width: "300px",
+                top: "var(--y)",
+                left: "var(--x)",
                 duration: 0.5,
                 ease: "back.out(2)",
             });
@@ -28,25 +30,18 @@ export default function HomeScreen() {
             const cursorY = event.clientY;
 
             const cursorCheck = event.pageY;
-
             
-            // Calculate the follower's position as a percentage of the distance
-            // from the top right corner of the screen
-            const offsetXPercentage = (cursorX / screenWidth) * 100;
-            const offsetYPercentage = (cursorY / screenHeight) * 100;
             
-            // Calculate the follower's position relative to the cursor and screen center
-            const offsetXCenter = (cursorX - screenWidth / 2) / 60; // Adjust the divisor to control the strength
-            const offsetYCenter = (cursorY - screenHeight / 2) / 100; // Adjust the divisor to control the strength
+            
             
             // Combine both effects 
-            const offsetX = (offsetXPercentage - offsetXCenter);
-            const offsetY = (offsetYPercentage - offsetYCenter);
+            const offsetX = (((screenWidth * 0.5)/screenWidth) * 100) - (300 / screenWidth) * 50 + ((cursorX / screenWidth) * 100) - 50;
+            const offsetY = (((screenHeight * 0.5)/screenHeight) * 100) - (300 / screenWidth) * 50 + ((cursorY / screenHeight) * 100) - 50;
             
             if(screenHeight - cursorCheck <= 0){
                 gsap.to(hero, {
-                    "--x": `${((screenWidth * 0.5)/screenWidth) * 100}%`,
-                    "--y": `${((screenHeight * 0.5)/screenHeight) * 100}%`,
+                    "--x": `${(((screenWidth * 0.5)/screenWidth) * 100)}%`,
+                    "--y": `${(((screenHeight * 0.5)/screenHeight) * 100)}%`,
                     duration: 2,
                     ease: "sine.out",
                 });
@@ -56,7 +51,7 @@ export default function HomeScreen() {
             gsap.to(hero, {
                 "--x": `${offsetX}%`,
                 "--y": `${offsetY}%`,
-                duration: 0.7,
+                duration: 1.5,
                 ease: "sine.out",
             });
         }, 2));
@@ -76,19 +71,13 @@ export default function HomeScreen() {
     return (
         <div>
             <Cursor />
+            <span className='circle'></span>
             <div className='home-screen' id="home">
                 <div className='primary-wrapper'>
                     <div className='header-container'>
-                        <h3>BRING YOUR</h3>
-                        <h1>DREAM WEB VISION</h1>
-                        <h3>TO LIFE</h3>
-                    </div>
-                </div>
-                <div className='secondary-wrapper' >
-                    <div className='header-container header-container-secondary' >
-                        <h3>BRING YOUR</h3>
-                        <h1>DREAM WEB VISION</h1>
-                        <h3>TO LIFE</h3>
+                        <h3>Let me bring your</h3>
+                        <h1>dream web vision</h1>
+                        <h3>to life</h3>
                     </div>
                 </div>
             </div>

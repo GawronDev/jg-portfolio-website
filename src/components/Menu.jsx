@@ -8,18 +8,17 @@ import "../css/Menu.css";
 export default function Menu(props) {
 
     var menuItems = document.querySelectorAll(".menu-item");
+    var separators = document.querySelectorAll(".separator");
 
     // Change the menu item based on the current menu state
     useEffect(() => {
         if (props.status == "open") {
             document.getElementById("menu").style.overflowY = "hidden";
             document.getElementById("menu").style.height = "100%";
+            document.getElementById("menu").style.opacity = "100%";
             setTimeout(() => {
                 fadeInMenuItem(0);
             }, 200);
-            setTimeout(() => {
-                document.getElementById("icons").style.opacity = "100%";
-            }, 500);
             setTimeout(() => {
                 document.getElementById("menu").style.overflowY = "auto";
             }, 500);
@@ -27,11 +26,11 @@ export default function Menu(props) {
             document.getElementById("menu").style.overflowY = "hidden";
             fadeOutMenuItem(5);
             setTimeout(() => {
-                document.getElementById("icons").style.opacity = "0%";
-            }, 0);
-            setTimeout(() => {
                 document.getElementById("menu").style.height = "0%";
             }, 500);
+            setTimeout(() => {
+                document.getElementById("menu").style.opacity = "0%";
+            }, 200);
             setTimeout(() => {
                 document.getElementById("menu").style.overflowY = "auto";
             }, 1000);
@@ -62,7 +61,7 @@ export default function Menu(props) {
     function scrollToElement(id) {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'instant'});
+            element.scrollIntoView({ behavior: 'instant' });
         }
     }
 
@@ -70,50 +69,22 @@ export default function Menu(props) {
         <div className="menu" id="menu">
             <div className="menu-content-wrapper">
                 <div className="menu-item">
-                    <span>1. Landing page</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#" onClick={(event) => { props.changeMenuState(); scrollToElement("home") }}>START HERE</a></h2>
+                    <h2><a className="menu-link hover-underline-animation" href="#" onClick={(event) => { props.changeMenuState(); scrollToElement("home") }}><span className="orange">1.</span> Landing page</a></h2>
+                </div>
+
+                <div className="menu-item">
+                    <h2><a className="menu-link hover-underline-animation" href="#projects" onClick={(event) => { props.changeMenuState(); scrollToElement("projects") }}><span className="orange">2.</span> My work</a></h2>
+                </div>
+
+                <div className="menu-item">
+                    <h2><a className="menu-link hover-underline-animation" href="https://www.youtube.com/@Codeolences"><span className="orange">3.</span> YouTube</a></h2>
+                </div>
+
+                <div className="menu-item">
+                    <h2><a className="menu-link hover-underline-animation" href="#"><span className="orange">4.</span> About me</a></h2>
                 </div>
                 <div className="menu-item">
-                    <span>2. Projects</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#projects" onClick={(event) => { props.changeMenuState(); scrollToElement("projects") }}>MY WORK</a></h2>
-                </div>
-                <div className="menu-item">
-                    <span>3. My channel</span>
-                    <h2><a className="menu-link hover-underline-animation" href="https://www.youtube.com/@Codeolences">YOUTUBE</a></h2>
-                </div>
-                <div className="menu-item">
-                    <span>4. About me</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#">WHO AM I</a></h2>
-                </div>
-                <div className="menu-item">
-                    <span>5. Useful articles</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#">BLOG</a></h2>
-                </div>
-                <div className="menu-item">
-                    <span>6. Contact me</span>
-                    <h2><a className="menu-link hover-underline-animation" href="#">GET IN TOUCH</a></h2>
-                </div>
-            </div>
-            <div className="menu-icon-container" id="icons">
-                <div className="menu-item-icon">
-                    <a href="https://www.x.com/Codeolences">
-                        <img src={Twitter} alt="Twitter icon" />
-                    </a>
-                </div>
-                <div className="menu-item-icon">
-                    <a href="https://www.youtube.com/@Codeolences">
-                        <img src={Youtube} alt="Youtube icon" />
-                    </a>
-                </div>
-                <div className="menu-item-icon">
-                    <a href="https://codepen.io/Codeolences">
-                        <img src={Codepen} alt="Codepen icon" />
-                    </a>
-                </div>
-                <div className="menu-item-icon">
-                    <a href="https://www.github.com/GawronDev">
-                        <img src={Github} alt="Github icon" />
-                    </a>
+                    <h2><a className="menu-link hover-underline-animation" href="#"><span className="orange">5.</span> Let's get in touch</a></h2>
                 </div>
             </div>
         </div>
