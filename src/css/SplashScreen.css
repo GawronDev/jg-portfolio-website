@@ -1,0 +1,26 @@
+.splash-screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s linear;
+    transform-origin: bottom center;
+}
+
+#jakub {
+    filter: blur(100px);
+    transition: 0.8s ease-in;
+}
+
+#portfolio {
+    filter: blur(100px);
+    transition: 0.8s ease-in;
+}
+
+.orange-text {
+    color: #ff8800;
+}

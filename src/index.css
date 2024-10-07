@@ -62,10 +62,10 @@ body {
     background-color: #ff8800;
     border-radius: 50%;
     display: inline-block;
-    position: absolute;
+    position: fixed;
+    filter: blur(130px);
     top: 50%;
     left: 50%;
-    filter: blur(130px);
 }
 
 .home-screen {
@@ -168,6 +168,10 @@ body {
     width: 100%;
 }
 
+.container {
+    z-index: 1;
+}
+
 
 /* Extra Small (XS) - Mobile Phones */
 @media (max-width: 575px) {
@@ -245,24 +249,3 @@ body {
         --fs-index: 52px;
     }
 }
-
-/* Orientation Changes (Portrait and Landscape) */
-/* @media (orientation: portrait) {
-    .home-screen-mobile {
-        display: flex;
-    }
-
-    .home-screen {
-        display: none;
-    }
-}
-
-@media (orientation: landscape) {
-    .home-screen {
-        display: flex;
-    }
-
-    .home-screen-mobile {
-        display: none;
-    }
-} */

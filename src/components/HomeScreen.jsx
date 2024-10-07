@@ -1,21 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import Cursor from './Cursor';
-import MobileImage from "../assets/mobile-photo.png";
-import ArrowNav from './ArrowNav';
 
 export default function HomeScreen() {
     let tl = gsap.timeline({ delay: 0.5 });
-
-    document.addEventListener("scroll", (event) => {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            document.getElementById("arrow").style.opacity = "0";
-        }
-    });
-
     // Initialize the bubble and the mouse listener
     useEffect(() => {
         const hero = document.querySelector(".circle");
-        
+
         let homeScreen = document.getElementById("home");
         const screenWidth = homeScreen.offsetWidth;
         const screenHeight = homeScreen.scrollHeight;
@@ -31,8 +22,8 @@ export default function HomeScreen() {
         }
 
         document.addEventListener("mousemove", debounce(function (event) {
-            const cursorX = event.clientX;
-            const cursorY = event.clientY;
+            const cursorX = event.clientX - 150;
+            const cursorY = event.clientY - 150;
 
             // Combine both effects 
             const offsetX = ((cursorX / screenWidth) * 100);
@@ -47,6 +38,14 @@ export default function HomeScreen() {
         }, 2));
     }, []);
 
+    useEffect(() => {
+        document.addEventListener("scroll", (event) => {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("arrow").style.opacity = "0";
+            }
+        });
+    }, [])
+
     // Debounce function for smooth following of the bubble
     function debounce(callback, wait) {
         let timeout;
@@ -58,13 +57,10 @@ export default function HomeScreen() {
         }
     }
 
-
-
-
     return (
         <div>
             <Cursor />
-            <span className='circle'></span>
+            <span className='circle' ></span>
             <div className='home-screen' id="home">
                 <div className='primary-wrapper'>
                     <div className='header-container'>

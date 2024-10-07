@@ -2,12 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 import HomeScreen from '../components/HomeScreen';
 import TopBar from '../components/TopBar';
 import Menu from '../components/Menu';
-import CardScreen from "../components/CardScreen";
-import ProjectScreen from '../components/ProjectsScreen';
-import AboutMeScreen from '../components/AboutMeScreen';
-import noiseTexture from '../assets/noise.png';
 import SideIcons from '../components/SideIcons';
 import TileScreen from '../components/TileScreen';
+import SplashScreen from '../components/SplashScreen';
 
 export default function Root() {
   var [menuStatus, setMenuStatus] = useState("closed");
@@ -46,6 +43,8 @@ function cursorTurnOffHover() {
 
 
   return (
+    <>
+    <SplashScreen/>
     <div className='main-wrapper'>
       <TopBar status={menuStatus} changeMenuState={changeMenuState} turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
       <SideIcons turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
@@ -63,5 +62,6 @@ function cursorTurnOffHover() {
         <TileScreen turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
       </div>
     </div>
+    </>
   )
 }

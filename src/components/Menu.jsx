@@ -13,6 +13,7 @@ export default function Menu(props) {
     // Change the menu item based on the current menu state
     useEffect(() => {
         if (props.status == "open") {
+            document.getElementById("arrow").style.opacity = "0";
             document.getElementById("menu").style.overflowY = "hidden";
             document.getElementById("menu").style.height = "100%";
             setTimeout(() => {
@@ -60,7 +61,7 @@ export default function Menu(props) {
             element.scrollIntoView({ behavior: 'instant' });
         }
     }
-    
+
     return (
         <div className="menu" id="menu">
             <div className="menu-content-wrapper">
@@ -69,11 +70,11 @@ export default function Menu(props) {
                 </div>
 
                 <div className="menu-item">
-                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#"> About me</a><span className="orange">2</span></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#about-me" onClick={(event) => { props.changeMenuState(); scrollToElement("about-me") }}> About me</a><span className="orange">2</span></h2>
                 </div>
 
                 <div className="menu-item">
-                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#projects" onClick={(event) => { props.changeMenuState(); scrollToElement("projects") }}>My work</a><span className="orange">3</span></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#my-work" onClick={(event) => { props.changeMenuState(); scrollToElement("my-work") }}>My work</a><span className="orange">3</span></h2>
                 </div>
 
                 <div className="menu-item">
@@ -81,7 +82,7 @@ export default function Menu(props) {
                 </div>
 
                 <div className="menu-item">
-                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#"> Let's get in touch</a><span className="orange">5</span></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#contact" onClick={(event) => { props.changeMenuState(); scrollToElement("contact") }}> Let's get in touch</a><span className="orange">5</span></h2>
                 </div>
             </div>
         </div>

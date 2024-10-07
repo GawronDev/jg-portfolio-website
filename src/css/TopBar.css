@@ -65,6 +65,7 @@
 /* Orientation Changes (Portrait and Landscape) */
 @media (orientation: portrait) {
     .top-bar {
-        background-color: var(--main-background);
+        position: fixed;
+        background-color: var(--main-secondary-background);
     }
 }

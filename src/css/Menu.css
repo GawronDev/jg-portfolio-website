@@ -126,7 +126,7 @@
 .orange {
     opacity: 100%;
     font-weight: 100;
-    font-size: 36px;
+    font-size: var(--fs-small-header);
     vertical-align: text-top;
     color: var(--main-light-orange);
 }
@@ -252,15 +252,7 @@
     }
 
     .menu-icon-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 100%;
-        padding: 0px;
-        padding-bottom: 10px;
-        bottom: 0%;
-        opacity: 100%;
-        filter: invert(100%);
+        display: none;
     }
 
     .menu-item-icon {

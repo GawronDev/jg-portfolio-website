@@ -20,8 +20,8 @@ export default function TileScreen(props) {
         <>
             <div className="container about-me">
                 <div className="row">
-                    <div className="col-8">
-                        <h2 className="mb-3">About me</h2>
+                    <div className="col-xl-8 col-sm-12">
+                        <h2 className="mb-3" id="about-me">About me</h2>
                         <p>
                             My name is <b>Jakub</b> and I'm a 21-year-old computer science student at <b>TU Dresden</b>.
                             I specialise in web development and design, and have experience working with numerous
@@ -39,21 +39,35 @@ export default function TileScreen(props) {
                         </p>
                         <div className="orange-highlight-box"></div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-xl-4 col-sm-12 text-sm-center">
                         <div className="img-container">
                             <img src={Me} alt="Jakub Gawroński" />
+                            <span className="img-text">That's me! (and my cat)</span>
                         </div>
-                        <div className="bg-grey-overlay"></div>
+                        <span className="bg-grey-overlay"></span>
                     </div>
                 </div>
-            </div>
-            <div className="container">
                 <div className="row">
+                    <h2 className="mb-3" id="my-work">My work</h2>
+                    <div className="col-xl-6 col-sm-12 mb-3">
+                        <p>
+                            Each project has been carefully crafted to meet the unique needs of my clients, and has been designed with user experience in mind.
+                            I take pride in my ability to deliver high-quality, visually appealing websites that are optimized for search engines and easy for users to navigate.
+                        </p>
+                        <div className="orange-highlight-box"></div>
+                    </div>
+                    <div className="col-xl-6 col-sm-12">
+                        <p>
+                            Over the years I have created several websites for various clients and some for myself. Some of them are presented below. The most recent ones are <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="https://www.notariusz-gorzow.pl">notariusz-gorzow.pl</a>, <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="https://www.logopedadrezdenko.pl">logopedadrezdenko.pl</a> and <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="https://www.codeolences.com">codeolences.com</a>.
+                        </p>
+                    </div>
+                </div>
+                <div className="row extra-margin">
                     <div className="col-12">
                         <div className="carousel-wrapper">
                             <div id="carousel" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-indicators">
-                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
@@ -64,84 +78,39 @@ export default function TileScreen(props) {
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
                                     <button type="button" data-bs-target="#carousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
-
                                 </div>
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">
                                         <img src={Ntr1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Some representative placeholder content for the first slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Lgpd1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Second slide label</h5>
-                                            <p>Some representative placeholder content for the second slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Lgpd2} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Third slide label</h5>
-                                            <p>Some representative placeholder content for the third slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Mgd1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Some representative placeholder content for the first slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Mgd2} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Second slide label</h5>
-                                            <p>Some representative placeholder content for the second slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Msc1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Third slide label</h5>
-                                            <p>Some representative placeholder content for the third slide.</p>
-                                        </div>
                                     </div><div className="carousel-item">
                                         <img src={Msc2} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Some representative placeholder content for the first slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Lcky1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Second slide label</h5>
-                                            <p>Some representative placeholder content for the second slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Lcky2} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Third slide label</h5>
-                                            <p>Some representative placeholder content for the third slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Mdg1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Some representative placeholder content for the first slide.</p>
-                                        </div>
                                     </div>
                                     <div className="carousel-item">
                                         <img src={Cdl1} className="d-block w-100" alt="..." />
-                                        <div className="carousel-caption d-none d-md-block">
-                                            <h5>Second slide label</h5>
-                                            <p>Some representative placeholder content for the second slide.</p>
-                                        </div>
                                     </div>
                                 </div>
                                 <button className="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -154,18 +123,56 @@ export default function TileScreen(props) {
                                 </button>
                             </div>
                         </div>
-                        <div className="orange-highlight-box"></div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-6">
-                        <h2 className="mb-3">My work</h2>
-                        <p>
-                            Each project has been carefully crafted to meet the unique needs of my clients, and has been designed with user experience in mind.
-                            I take pride in my ability to deliver high-quality, visually appealing websites that are optimized for search engines and easy for users to navigate.
-                        </p>
-                    </div>
+                <div className="row mt-5">
+                    <h2 className="mb-3" id="contact">Contact</h2>
+                    <p>
+                        Best way to reach me is through email: <a href="mailto:jakub.gawronski.kontakt@gmail.com">jakub.gawronski.kontakt@gmail.com</a>
+                    </p>
                 </div>
+            </div>
+            <div className="container mt-5">
+                <footer className="text-center text-white">
+                    <section className="mt-5">
+                        <div className="row text-center d-flex justify-content-center pt-5">
+                            <div className="col-md-2">
+                                <h6>
+                                    <a href="#about-me" >About me</a>
+                                </h6>
+                            </div>
+
+                            <div className="col-md-2">
+                                <h6>
+                                    <a href="#my-work" >Projects</a>
+                                </h6>
+                            </div>
+
+                            <div className="col-md-2">
+                                <h6>
+                                    <a href="#contact" >Contact</a>
+                                </h6>
+                            </div>
+
+                            <div className="col-md-2">
+                                <h6>
+                                    <a href="https://www.youtube.com/@Codeolences">YouTube</a>
+                                </h6>
+                            </div>
+                        </div>
+                    </section>
+                    <hr className="my-4" />
+                    <section className="mb-2">
+                        <div className="row">
+                            <p className="text-center">
+                                Created with <i className="bi bi-heart-fill"></i> by Jakub Gawroński using JS, React, Bootstrap and GSAP.
+                            </p>
+                        </div>
+                    </section>
+                    <div className="text-center p-3">
+                        <span>© 2024 Copyright: </span> <a className="text-white" href="https://jakub-gawronski.com/">jakub-gawronski.com</a>
+                    </div>
+                </footer>
             </div>
         </>
 
