@@ -4,7 +4,6 @@
     cursor: none;
     user-select: none;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 html,
@@ -25,6 +24,7 @@ body {
     width: 100vw;
     font-family: joly-text, sans-serif;
     background-color: var(--main-background);
+    overflow-x: hidden;
 }
 
 .main-wrapper {
@@ -34,7 +34,7 @@ body {
 .noise-texture {
     position: fixed;
     filter: url("#noise");
-    opacity: 30%;
+    opacity: 0%;
     top: 0;
     left: 0;
     width: 100%;

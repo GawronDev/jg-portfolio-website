@@ -2,12 +2,13 @@
     height: 0;
     width: 100%;
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     left: 0;
     top: 0;
     background-color: var(--main-secondary-background);
     overflow-x: hidden;
     transition: 0.4s ease-in;
+    filter: drop-shadow(0px 16px 21px #a0a0a0);
 }
 
 .menu-content-wrapper {
@@ -34,9 +35,10 @@
 .menu-item h2 {
     display: block;
     color: var(--main-dark);
+    font-style: normal;
     font-size: 120px;
     margin: 0;
-    font-weight: 900;
+    font-weight: 500;
     padding: 0;
     line-height: 1.6;
 }
@@ -70,13 +72,62 @@
     color: var(--main-dark);
     text-decoration: none;
     transition: 0.5s ease-out;
-    z-index: 99;    
+    z-index: 99;
+}
+
+.side-arrow {
+    width: 40px;
+    position: fixed;
+    color: black;
+    bottom: 2%;
+    left: 0%;
+    opacity: 100%;
+    margin-left: 15px;
+    z-index: 99;
+}
+
+#arrow {
+    transition: 0.5s ease-out;
+}
+
+.arrow {
+    text-align: center;
+    margin: 8% 0;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
 }
 
 
 .orange {
-    opacity: 45%;
-    filter: blur(2px);
+    opacity: 100%;
+    font-weight: 100;
+    font-size: 36px;
+    vertical-align: text-top;
     color: var(--main-light-orange);
 }
 
@@ -94,8 +145,7 @@
     bottom: 7px;
     z-index: 98;
     left: 0;
-    background-color: var(--main-light-orange);
-    filter: blur(3px);
+    background-color: var(--main-white);
     transform-origin: bottom right;
     transition: transform 0.8s ease-in-out;
     opacity: 45%;
@@ -154,7 +204,6 @@
         display: block;
         font-size: 75px;
         margin: 0;
-        font-weight: 900;
         padding: 0;
     }
 }
@@ -165,7 +214,6 @@
         display: block;
         font-size: 80px;
         margin: 0;
-        font-weight: 900;
         padding: 0;
     }
 }
@@ -176,7 +224,6 @@
         display: block;
         font-size: 100px;
         margin: 0;
-        font-weight: 900;
         padding: 0;
     }
 }
@@ -187,7 +234,6 @@
         display: block;
         font-size: 120px;
         margin: 0;
-        font-weight: 900;
         padding: 0;
     }
 }

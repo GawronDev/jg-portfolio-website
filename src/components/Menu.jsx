@@ -15,7 +15,6 @@ export default function Menu(props) {
         if (props.status == "open") {
             document.getElementById("menu").style.overflowY = "hidden";
             document.getElementById("menu").style.height = "100%";
-            document.getElementById("menu").style.opacity = "100%";
             setTimeout(() => {
                 fadeInMenuItem(0);
             }, 200);
@@ -24,13 +23,10 @@ export default function Menu(props) {
             }, 500);
         } else if (props.status == "closed") {
             document.getElementById("menu").style.overflowY = "hidden";
-            fadeOutMenuItem(5);
+            fadeOutMenuItem(4);
             setTimeout(() => {
                 document.getElementById("menu").style.height = "0%";
             }, 500);
-            setTimeout(() => {
-                document.getElementById("menu").style.opacity = "0%";
-            }, 200);
             setTimeout(() => {
                 document.getElementById("menu").style.overflowY = "auto";
             }, 1000);
@@ -64,27 +60,28 @@ export default function Menu(props) {
             element.scrollIntoView({ behavior: 'instant' });
         }
     }
-
+    
     return (
         <div className="menu" id="menu">
             <div className="menu-content-wrapper">
                 <div className="menu-item">
-                    <h2><a className="menu-link hover-underline-animation" href="#" onClick={(event) => { props.changeMenuState(); scrollToElement("home") }}><span className="orange">1.</span> Landing page</a></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#" onClick={(event) => { props.changeMenuState(); scrollToElement("home") }}>Landing page</a><span className="orange">1</span></h2>
                 </div>
 
                 <div className="menu-item">
-                    <h2><a className="menu-link hover-underline-animation" href="#projects" onClick={(event) => { props.changeMenuState(); scrollToElement("projects") }}><span className="orange">2.</span> My work</a></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#"> About me</a><span className="orange">2</span></h2>
                 </div>
 
                 <div className="menu-item">
-                    <h2><a className="menu-link hover-underline-animation" href="https://www.youtube.com/@Codeolences"><span className="orange">3.</span> YouTube</a></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#projects" onClick={(event) => { props.changeMenuState(); scrollToElement("projects") }}>My work</a><span className="orange">3</span></h2>
                 </div>
 
                 <div className="menu-item">
-                    <h2><a className="menu-link hover-underline-animation" href="#"><span className="orange">4.</span> About me</a></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="https://www.youtube.com/@Codeolences"> YouTube</a><span className="orange">4</span></h2>
                 </div>
+
                 <div className="menu-item">
-                    <h2><a className="menu-link hover-underline-animation" href="#"><span className="orange">5.</span> Let's get in touch</a></h2>
+                    <h2><a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} className="menu-link hover-underline-animation" href="#"> Let's get in touch</a><span className="orange">5</span></h2>
                 </div>
             </div>
         </div>

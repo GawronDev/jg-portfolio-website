@@ -56,25 +56,11 @@ export default function TopBar(props) {
         }
     }
 
-    function cursorTurnOnHover() {
-        let cursor = document.getElementById("cursor");
-        cursor.style.width = "30px";
-        cursor.style.mixBlendMode = "normal";
-        cursor.style.backgroundColor = "#ff8800";
-        cursor.style.opacity = "0.5";
-    }
-
-    function cursorTurnOffHover() {
-        cursor.style.width = "40px";
-        cursor.style.mixBlendMode = "luminosity";
-        cursor.style.backgroundColor = "transparent";
-        cursor.style.opacity = "1";
-    }
-
+    
     return (
         <div className="top-bar">
             <img className="logo" src={Logo} alt="Jakub Gawroński Logo" />
-            <div className="menu-icon" onMouseEnter={cursorTurnOnHover} onMouseLeave={cursorTurnOffHover}>
+            <div className="menu-icon" onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover}>
                 <svg id="menu-icon" onClick={clickMenuButton} width="100%" height="100%" viewBox="0 0 52 52"></svg>
             </div>
         </div>

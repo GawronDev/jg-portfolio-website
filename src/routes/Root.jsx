@@ -7,6 +7,7 @@ import ProjectScreen from '../components/ProjectsScreen';
 import AboutMeScreen from '../components/AboutMeScreen';
 import noiseTexture from '../assets/noise.png';
 import SideIcons from '../components/SideIcons';
+import TileScreen from '../components/TileScreen';
 
 export default function Root() {
   var [menuStatus, setMenuStatus] = useState("closed");
@@ -20,19 +21,34 @@ export default function Root() {
   }
 
   function openMenu() {
-    console.log("open menu");
     setMenuStatus("open");
   }
 
   function closeMenu() {
-    console.log("close menu");
     setMenuStatus("closed");
   }
 
+  function cursorTurnOnHover() {
+    let cursor = document.getElementById("cursor");
+    cursor.style.width = "30px";
+    cursor.style.mixBlendMode = "normal";
+    cursor.style.backgroundColor = "#ff8800";
+    cursor.style.opacity = "0.5";
+}
+
+function cursorTurnOffHover() {
+    let cursor = document.getElementById("cursor");
+    cursor.style.width = "40px";
+    cursor.style.mixBlendMode = "luminosity";
+    cursor.style.backgroundColor = "transparent";
+    cursor.style.opacity = "1";
+}
+
+
   return (
     <div className='main-wrapper'>
-      <TopBar status={menuStatus} changeMenuState={changeMenuState}/>
-      <SideIcons />
+      <TopBar status={menuStatus} changeMenuState={changeMenuState} turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
+      <SideIcons turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
       <svg className='noise-texture'>
         <defs>
           <filter id='noise'>
@@ -42,10 +58,9 @@ export default function Root() {
       </svg>
       {/* <img src={noiseTexture} className='noise-texture' draggable={false}/> */}
       <div className='content-wrapper'>
-        <Menu status={menuStatus} changeMenuState={changeMenuState}/>
-        <HomeScreen />
-        {/* <ProjectScreen /> */}
-        {/* <AboutMeScreen /> */}
+        <Menu status={menuStatus} changeMenuState={changeMenuState} turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
+        <HomeScreen turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
+        <TileScreen turnOnHover={cursorTurnOnHover} turnOffHover={cursorTurnOffHover}/>
       </div>
     </div>
   )
