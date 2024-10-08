@@ -18,7 +18,7 @@ body {
 
     --fs-big-header: 7rem;
     --fs-small-header: 2rem;
-    --fs-index: 52px;
+    --fs-index: 22px;
 
     margin: 0;
     width: 100vw;
@@ -119,26 +119,27 @@ body {
 }
 
 .home-screen-mobile {
-    margin-top: 72px;
     background-color: var(--main-background);
     display: none;
     width: 100%;
     min-height: 100vh;
     height: 100%;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-text {
-    color: white;
+    color: var(--main-dark);
     padding: 15px;
 }
 
 .mobile-text h3 {
+    font-family: 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .mobile-text h1 {
@@ -149,13 +150,15 @@ body {
 }
 
 .mobile-text p {
-    padding: 0;
+    padding-top: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
     margin: 0;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: var(--fs-index);
+    font-weight: 400;
 }
 
 .mobile-text span {
+    font-style: italic;
     color: var(--main-light-orange);
 }
 
@@ -180,7 +183,7 @@ body {
     body {
         --fs-big-header: 3rem;
         --fs-small-header: 1.3rem;
-        --fs-index: 18px;
+        --fs-index: 16px;
     }
 }
 
@@ -191,7 +194,7 @@ body {
     body {
         --fs-big-header: 3rem;
         --fs-small-header: 1.3rem;
-        --fs-index: 18px;
+        --fs-index: 16px;
     }
 }
 
@@ -202,7 +205,7 @@ body {
     body {
         --fs-big-header: 3.5rem;
         --fs-small-header: 1rem;
-        --fs-index: 20px;
+        --fs-index: 16px;
     }
 }
 
@@ -213,7 +216,7 @@ body {
     body {
         --fs-big-header: 4rem;
         --fs-small-header: 1.5rem;
-        --fs-index: 24px;
+        --fs-index: 16px;
     }
 }
 
@@ -224,7 +227,7 @@ body {
     body {
         --fs-big-header: 5.5rem;
         --fs-small-header: 1.4rem;
-        --fs-index: 36px;
+        --fs-index: 18px;
     }
 }
 
@@ -235,7 +238,7 @@ body {
     body {
         --fs-big-header: 7rem;
         --fs-small-header: 2rem;
-        --fs-index: 42px;
+        --fs-index: 20px;
     }
 }
 
@@ -246,6 +249,27 @@ body {
     body {
         --fs-big-header: 8rem;
         --fs-small-header: 2.5rem;
-        --fs-index: 52px;
+        --fs-index: 21px;
+    }
+}
+
+/* Orientation Changes (Portrait and Landscape) */
+@media (orientation: portrait) {
+    .home-screen-mobile {
+        display: flex;
+    }
+
+    .home-screen {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) {
+    .home-screen {
+        display: flex;
+    }
+
+    .home-screen-mobile {
+        display: none;
     }
 }

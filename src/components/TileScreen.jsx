@@ -34,20 +34,20 @@ export default function TileScreen(props) {
                             I have experience in app development with Dart and Flutter or Python and KivyMD, as well as robotics, JAVA, Rust, computer graphics,
                             3D modelling with Blender and server setup, networking. <br /><br />
 
-                            Through my <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="www.youtube.com/@Codeolences">YouTube</a> channel I have also gained extensive knowledge in video editing, graphic design and YouTube SEO. I am fluent in
+                            Through my <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="https://www.youtube.com/@Codeolences">YouTube</a> channel I have also gained extensive knowledge in video editing, graphic design and YouTube SEO. I am fluent in
                             Adobe software such as Photoshop, Premier Pro, After Effects, Illustrator and Figma.
                         </p>
                         <div className="orange-highlight-box"></div>
                     </div>
-                    <div className="col-xl-4 col-sm-12 text-sm-center">
-                        <div className="img-container">
+                    <div className="col-xl-4 col-sm-12  px-5 px-sm-5 px-xl-0">
+                        <div className="img-container mx-auto-sm mx-0-xl mx-auto">
                             <img src={Me} alt="Jakub Gawroński" />
                             <span className="img-text">That's me! (and my cat)</span>
                         </div>
                         <span className="bg-grey-overlay"></span>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row ">
                     <h2 className="mb-3" id="my-work">My work</h2>
                     <div className="col-xl-6 col-sm-12 mb-3">
                         <p>
@@ -123,6 +123,7 @@ export default function TileScreen(props) {
                                 </button>
                             </div>
                         </div>
+                        <span className="show-on-mobile">For the best viewing experience please use the desktop version or put your phone in landscape. </span>
                     </div>
                 </div>
                 <div className="row mt-5">

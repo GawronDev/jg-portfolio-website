@@ -70,6 +70,17 @@ export default function HomeScreen() {
                     </div>
                 </div>
             </div>
+            <div className='home-screen-mobile'>
+                <div className='mobile-text'>
+                    <h3>Hi, I'm <b>Jakub</b> 👋</h3>
+                    <h1>Let me bring Your <br /> <span>dream web vision</span> <br /> to life</h1>
+                    <p>Having a well-designed and user-friendly website is crucial for
+                        any business looking to <b>succeed</b> in today's digital world. A website serves
+                        as the online face of a company and can be a determining factor in attracting and retaining customers.
+                    </p>
+                    <div className="orange-highlight-box-mobile"></div>
+                </div>
+            </div>
         </div>
     )
 }
