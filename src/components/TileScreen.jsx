@@ -34,7 +34,7 @@ export default function TileScreen(props) {
                             I have experience in app development with Dart and Flutter or Python and KivyMD, as well as robotics, JAVA, Rust, computer graphics,
                             3D modelling with Blender and server setup, networking. <br /><br />
 
-                            Through my <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="https://www.youtube.com/@Codeolences">YouTube</a> channel I have also gained extensive knowledge in video editing, graphic design and YouTube SEO. I am fluent in
+                            Through my <a onMouseEnter={props.turnOnHover} onMouseLeave={props.turnOffHover} href="https//www.youtube.com/@Codeolences">YouTube</a> channel I have also gained extensive knowledge in video editing, graphic design and YouTube SEO. I am fluent in
                             Adobe software such as Photoshop, Premier Pro, After Effects, Illustrator and Figma.
                         </p>
                         <div className="orange-highlight-box"></div>

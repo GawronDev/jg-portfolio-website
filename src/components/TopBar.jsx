@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import MenuIcon from "../assets/icons/MenuIcon.svg";
 import MenuX from "../assets/icons/MenuX.svg";
-import Logo from "../assets/logo_fi_nbg.png";
+import Logo from "../assets/logo_light.png";
 import "../css/TopBar.css"
 import Snap from "snapsvg-cjs";
 
